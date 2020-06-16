@@ -16,12 +16,15 @@
   apt_repository:
    repo: deb https://artifacts.elastic.co/packages/7.x/apt stable main
    state: present
+   filename: elastic-7.x.list
+   update_cache: yes
 
 # Installing Elasticsearch
 
 - name: Install Elasticsearch
   apt:
    name: elasticsearch
+   state: present
    update_cache: yes
    
 # Update Elasticsearch config file to allow access (to secure Elasticsearch, bind to 'localhost'). 
