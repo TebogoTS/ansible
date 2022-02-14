@@ -16,7 +16,7 @@
   lineinfile:
    destfile: /etc/kibana/kibana.yml
    regexp: 'server.host:'
-   line: 'server.host: 0.0.0.0'
+   line: 'server.host: {IP_Address}'
 
 - name: Defining server port
   lineinfile:
@@ -28,7 +28,7 @@
   lineinfile:
    destfile: /etc/kibana/kibana.yml
    regexp: 'elasticsearch.url:'
-   line: 'elasticsearch.url: "http://localhost:9200"'
+   line: 'elasticsearch.url: "http://{IP_Address:PORT}"'
    
 # Starting Kibana
 
